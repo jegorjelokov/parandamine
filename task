@@ -6,7 +6,6 @@ import json
 percent = 20 #you can change that number
 a = psutil.virtual_memory()[2]
 c = psutil.disk_usage('C:')[3]
-d = psutil.disk_usage('D:')[3]
 
 #Palju on vaba RAMi ja kokku RAMi
 print("Vaba RAMi:", psutil.virtual_memory()[1])
@@ -17,14 +16,11 @@ print()
 #Palju on vaba salvestusruumi ja kokku
 print("Vaba salvestusruumi C:", psutil.disk_usage('C:')[2]) 
 print("Kokku salvestusruumi C:", psutil.disk_usage('C:')[0]) 
-print("Vaba salvestusruumi D:", psutil.disk_usage('D:')[2]) 
-print("Kokku salvestusruumi D:", psutil.disk_usage('D:')[0])
 print("C: Võtab %:", c)
-print("D: Võtab %:", d)
 print()
 
 #Kui RAM või Salvestusruum võtab üle 20%, siis kuvab hoiatusteadet (hoiatusteate täituvus % peab olema seadistatav)
-if a > percent or c > percent or d > percent:
+if a > percent or c > percent:
     print("WARNING! : RAM või salvestusruum võtab üle 20%")
 print()
 
@@ -48,8 +44,4 @@ sys.stdout.write('\n')
 sys.stdout.write('Vaba salvestusruumi C:, psutil.disk_usage(C:)[2]')
 sys.stdout.write('\n')
 sys.stdout.write('Kokku salvestusruumi C:, psutil.disk_usage(C:)[0]')
-sys.stdout.write('\n')
-sys.stdout.write('Vaba salvestusruumi D:, psutil.disk_usage(D:)[2]')
-sys.stdout.write('\n')
-sys.stdout.write('Kokku salvestusruumi D:, psutil.disk_usage(D:)[0]')
 sys.stdout.write('\n')
